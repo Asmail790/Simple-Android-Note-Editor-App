@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment2">
+    <fragment
+        android:id="@+id/startFragment2"
+        android:name="com.example.uppgift3.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment2_to_EditNoteFragment"
+            app:destination="@id/EditNoteFragment" />
+        <action
+            android:id="@+id/action_startFragment2_to_createNoteFragment"
+            app:destination="@id/createNoteFragment" />
+        <action
+            android:id="@+id/action_startFragment2_to_settingsFragment2"
+            app:destination="@id/settingsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNoteFragment"
+        android:name="com.example.uppgift3.fragments.CreateNoteFragment"
+        android:label="CreateNoteFragment"
+        tools:layout="@layout/fragment_single_note">
+        <action
+            android:id="@+id/action_createNoteFragment_to_startFragment2"
+            app:destination="@id/startFragment2" />
+        <action
+            android:id="@+id/action_createNoteFragment_to_noteImageFragment"
+            app:destination="@id/noteImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditNoteFragment"
+        android:name="com.example.uppgift3.fragments.EditNoteFragment"
+        android:label="CreateNoteFragment"
+        tools:layout="@layout/fragment_single_note">
+        <action
+            android:id="@+id/action_EditNoteFragment_to_startFragment2"
+            app:destination="@id/startFragment2" />
+        <action
+            android:id="@+id/action_EditNoteFragment_to_noteImageFragment"
+            app:destination="@id/noteImageFragment" />
+        <argument
+            android:name="note"
+            app:argType="com.example.uppgift3.database.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.uppgift3.fragments.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/noteImageFragment"
+        android:name="com.example.uppgift3.fragments.NoteImageFragment"
+        android:label="NoteImageFragment"
+        tools:layout="@layout/fragment_note_image">
+        <argument
+            android:name="uriString"
+            app:argType="string" />
+    </fragment>
+</navigation>
